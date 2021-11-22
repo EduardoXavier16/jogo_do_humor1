@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do humor do emoji</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <header id="header">
+        <h1>Jogo do humor do emoji</h1>
+    </header>
+
+    <main>
+        <h2><span id= "situacao">Situação: Tranquilo</span></h2>
+        <button value = "first" id="btnClick" >Mudar situação</button>
+
+        <img id = "imagem" src="tranquilo.png" alt= 'emoji tranquilo' height="300px" width="300px">
+    </main>
+
+    <footer id="footer"><i>Esta página foi feita por: Eduardo Xavier!!!</i></footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+body{
+    background-color: aqua;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 7px;
+    text-shadow: 0.1em 0.1em rgb(131, 129, 129);
+    font-size: arial;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 300px;
+    margin: 10px;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    border-radius: 7px;
+    text-shadow: 0.1em 0.1em rgb(131, 129, 129);
+    font-size: arial;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 750px;
+    margin: 10px;
+
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    border-radius: 7px;
+    text-shadow: 0.1em 0.1em rgb(131, 129, 129);
+    font-size: arial;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 200px;
+    margin: 10px;
+
+}
+
+
+const botao = document.getElementById('btnClick')
+const situacao = document.getElementById('situacao')
+const imagem = document.getElementById('imagem')
+
+botao.addEventListener("click", function(){
+
+    
+
+    if(botao.value == "first"){
+        situacao.innerText = "Tranquilo"
+        imagem.src = "tranquilo.png" 
+        botao.value = "second"
+
+    }else if(botao.value == "second"){
+        situacao.innerText = "Sério"
+        imagem.src = "serio.png" 
+        botao.value = "third"
+
+}else{
+        situacao.innerText = "Zangado"
+        imagem.src = "zangado.png" 
+        botao.value = "first"
+
+
+    }
+})
